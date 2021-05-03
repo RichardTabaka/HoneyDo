@@ -1,2 +1,2 @@
 # HoneyDo
-Hoobyist BeeKeeping Site to Practive ASP.Net MVC
+Hoobyist BeeKeeping Site to Practice ASP.Net MVC
