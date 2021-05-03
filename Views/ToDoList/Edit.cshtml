@@ -1,0 +1,60 @@
+﻿@model HoneyDo.Models.ToDoItem
+@addTagHelper *,Microsoft.AspNetCor.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HoneyDo</title>
+    <link href="~/css/site.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a asp-action="HomeIndex" asp-controller="Home">HoneyDo</a>
+            <a asp-action="GettingStarted" asp-controller="Learning">Getting Started</a>
+            <a class="currentPage" asp-action="Index" asp-controller="ToDoList">To Do List</a>
+        </div>
+    </nav>
+    <h1 class="MainHead">To Do List</h1>
+    <h3 class="MainHead">Edit @Html.ValueFor(model => model.Title):</h3>
+    <br />
+    <br />
+
+    <a asp-action="List" asp-controller="ToDoList">View Entire To-Do List</a><br />
+    <a asp-action="Add" asp-controller="ToDoList">Add Item to To-Do List</a><br />
+    <a asp-action="Remove" asp-controller="ToDoList">Remove Item From To-Do List</a><br />
+    <a asp-action="Edit" asp-controller="ToDoList">Edit Item in To-Do List</a>
+    <br /><br />
+
+
+    <form asp-controller="ToDoList" asp-action="Edit">
+        @Html.LabelFor(model => model.Title) <br /> @Html.EditorFor(model => model.Title)
+        <br />
+        <br />
+        @Html.LabelFor(model => model.Description) <br /> @Html.EditorFor(model => model.Description)
+        <br />
+        <br />
+        @Html.LabelFor(model => model.Completed) <br /> @Html.EditorFor(model => model.Completed)
+        <br />
+        <br />
+
+
+
+
+        <input type="submit" value="Save Item" />
+    </form>
+
+
+
+
+
+
+
+</body>
+</html>

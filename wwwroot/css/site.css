@@ -1,0 +1,47 @@
+﻿html {
+    /* font-size 62.5% makes 1rem equal 10px for easy size calculations. */
+    font-size: 62.5%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #FCECDD;
+}
+
+body {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #2E1114;
+}
+
+.container {
+    padding-left: 7%;
+    max-width: 94rem;
+}
+
+nav {
+    background-color: #FEA82F;
+    line-height: 6rem;
+    font-size: 1.7rem;
+}
+
+    nav a {
+        text-decoration: none;
+        color: #2E1114;
+        padding: 1rem;
+    }
+
+.currentPage {
+    font-weight: bolder;
+    background-color: #FF6701;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.MainHead {
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
