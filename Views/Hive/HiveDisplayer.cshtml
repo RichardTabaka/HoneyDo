@@ -1,0 +1,81 @@
+﻿@model IEnumerable<HoneyDo.Models.Hive>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HoneyDo</title>
+    <link href="~/css/site.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a asp-action="HomeIndex" asp-controller="Home">HoneyDo</a>
+            <a asp-action="GettingStarted" asp-controller="Learning">Getting Started</a>
+            <a asp-action="Index" asp-controller="ToDoList">To Do List</a>
+            <a class="currentPage" asp-action="HiveDisplayer" asp-controller="Hive">My Hives</a>
+        </div>
+    </nav>
+    <h1 class="MainHead">Your Hives</h1>
+    <h3 class="MainHead">Information about all of your hives:</h3>
+    <a asp-action="Add" asp-controller="Hive">Add a new Hive</a>
+    <br />
+    <br />
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.HiveName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BeeType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Location)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BeeCount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HoneyProduced)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var hive in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => hive.HiveName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => hive.BeeType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => hive.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => hive.BeeCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => hive.HoneyProduced)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@hive.HiveId">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@hive.HiveId">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>

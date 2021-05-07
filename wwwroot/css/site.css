@@ -9,11 +9,13 @@ body {
     margin: 0;
     font-size: 1.8rem;
     color: #2E1114;
+    text-align: center;
 }
 
 .container {
     padding-left: 7%;
     max-width: 94rem;
+    text-align: left;
 }
 
 nav {
@@ -44,4 +46,19 @@ h1 {
 footer {
     position: fixed;
     bottom: 0;
+}
+
+/* Table Stuff */
+table {
+    background-color: #FEA82F;
+    align-content: center;
+    width: 80%;
+    margin-left: 10%;
+}
+tbody {
+    background-color: #FCECDD;
+    border: thick;
+}
+td {
+    
 }

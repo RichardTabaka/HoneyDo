@@ -10,6 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using HoneyDo.Data;
+using HoneyDo.Models;
 
 namespace HoneyDo
 {
@@ -28,10 +31,13 @@ namespace HoneyDo
             services.AddMvc(x => x.EnableEndpointRouting = false);
             services.AddControllersWithViews();
             services.AddSingleton<IToDoList, ToDoList>();
+
+            // Add EF6 DB:
+            services.AddDbContext<HiveContext>(options => options.UseSqlite("Data Source=hive.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, HiveContext hiveContext) // Pass instance of HiveContext for DB Shenanigans
         {
             app.UseDeveloperExceptionPage();
 
@@ -50,6 +56,10 @@ namespace HoneyDo
 
             app.Run(async (context) => { await context.Response.WriteAsync("No route matched"); });
 
+
+            // DB Shenanigans:
+            hiveContext.Database.EnsureDeleted();
+            hiveContext.Database.EnsureCreated();
         }
     }
 }

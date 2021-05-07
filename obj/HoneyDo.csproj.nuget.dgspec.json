@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MSSA\\CSC 395 Web Dev\\HoneyDo\\HoneyDo.csproj": {}
+    "C:\\Users\\Richa\\Documents\\GitHub\\HoneyDo\\HoneyDo.csproj": {}
   },
   "projects": {
-    "C:\\MSSA\\CSC 395 Web Dev\\HoneyDo\\HoneyDo.csproj": {
+    "C:\\Users\\Richa\\Documents\\GitHub\\HoneyDo\\HoneyDo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MSSA\\CSC 395 Web Dev\\HoneyDo\\HoneyDo.csproj",
+        "projectUniqueName": "C:\\Users\\Richa\\Documents\\GitHub\\HoneyDo\\HoneyDo.csproj",
         "projectName": "HoneyDo",
-        "projectPath": "C:\\MSSA\\CSC 395 Web Dev\\HoneyDo\\HoneyDo.csproj",
+        "projectPath": "C:\\Users\\Richa\\Documents\\GitHub\\HoneyDo\\HoneyDo.csproj",
         "packagesPath": "C:\\Users\\Richa\\.nuget\\packages\\",
-        "outputPath": "C:\\MSSA\\CSC 395 Web Dev\\HoneyDo\\obj\\",
+        "outputPath": "C:\\Users\\Richa\\Documents\\GitHub\\HoneyDo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Richa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"

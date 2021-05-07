@@ -1,0 +1,53 @@
+﻿@model HoneyDo.Models.Hive
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HoneyDo</title>
+    <link href="~/css/site.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a asp-action="HomeIndex" asp-controller="Home">HoneyDo</a>
+            <a asp-action="GettingStarted" asp-controller="Learning">Getting Started</a>
+            <a class="currentPage" asp-action="Index" asp-controller="ToDoList">To Do List</a>
+            <a asp-action="HiveDisplayer" asp-controller="Hive">My Hives</a>
+        </div>
+    </nav>
+    <h1 class="MainHead">oYour Hives</h1>
+    <h3 class="MainHead">Add a new Hive:</h3>
+    <br />
+    <br />
+
+
+    <form asp-controller="Hive" asp-action="Add">
+        @Html.LabelFor(model => model.HiveName) <br /> @Html.EditorFor(model => model.HiveName)
+        <br />
+        <br />
+        @Html.LabelFor(model => model.BeeType) <br /> @Html.EditorFor(model => model.BeeType)
+        <br />
+        <br />
+        @Html.LabelFor(model => model.Location) <br /> @Html.EditorFor(model => model.Location)
+        <br />
+        <br />
+        @Html.LabelFor(model => model.BeeCount) <br /> @Html.EditorFor(model => model.BeeCount)
+        <br />
+        <br />
+        @Html.LabelFor(model => model.HoneyProduced) <br /> @Html.EditorFor(model => model.HoneyProduced)
+        <br />
+        <br />
+        <input type="submit" value="Add Hive" />
+    </form>
+
+
+
+
+</body>
+</html>
